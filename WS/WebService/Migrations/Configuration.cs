@@ -1,5 +1,6 @@
 namespace WebService.Migrations
 {
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -17,6 +18,15 @@ namespace WebService.Migrations
             string sqlCommand = @"USE [WebService.ModelContext] 
                 EXEC [dbo].[InsertData]";
             context.Database.ExecuteSqlCommand(sqlCommand);
+            context.City.AddOrUpdate(
+                data => data.Id,
+                new City()
+                {
+                    Id = 1,
+                    IdState = 1,
+                    Name = "teste"
+                }
+                );
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
