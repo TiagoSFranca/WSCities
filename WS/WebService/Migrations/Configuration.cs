@@ -15,18 +15,9 @@ namespace WebService.Migrations
 
         protected override void Seed(WebService.ModelContext context)
         {
-            string sqlCommand = @"USE [WebService.ModelContext] 
+            string sqlCommand = @"USE [ModelContext] 
                 EXEC [dbo].[InsertData]";
             context.Database.ExecuteSqlCommand(sqlCommand);
-            context.City.AddOrUpdate(
-                data => data.Id,
-                new City()
-                {
-                    Id = 1,
-                    IdState = 1,
-                    Name = "teste"
-                }
-                );
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
