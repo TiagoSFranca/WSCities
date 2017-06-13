@@ -15,7 +15,7 @@ namespace WebService.Migrations
 
         protected override void Seed(WebService.ModelContext context)
         {
-            string sqlCommand = @"USE [ModelContext] 
+            string sqlCommand = @"USE [dbe9a0ce2de78843d69a28a7910019f8cb] 
                 EXEC [dbo].[InsertData]";
             context.Database.ExecuteSqlCommand(sqlCommand);
             //  This method will be called after migrating to the latest version.
